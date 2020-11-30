@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>...</title>
+        <link rel="icon" href="popcorn.ico"> 
+        <script src="app1_projet.js"></script>
+    </head>
+    <body>
+        <h1>...</h1>
+        <h2>Joueurs</h2>
+        Prénom : <input type="text" id="prenom" onfocus="this.value=''">
+        Nom : <input type="text" id="nom" onfocus="this.value=''">
+        Pseudo : <input type="text" id="psd" onfocus="this.value=''">
+        <button onclick="Ajouter()">Participer</button>
+        <br/><br/>
+        <table border="1" id="tab_j">
+            <thead>
+                <tr>
+                    <th>Pseudo</th>
+                    <th>Quiz LCDP</th>
+                    <th>Quiz Stranger Things</th>
+                    <th>Quiz Minions</th>
+                </tr>
+            </thead>
+        </table>
+        <br/><br/>
+        <a href="#Quiz lcdp">Quiz LA CASA DE PAPEL</a>
+        <br>
+        <a href="#Quiz st">Quiz Stranger Things</a>
+        <br>
+        <a href="#Quiz minion">Quiz Minions</a>
+
+        <!--============ Quiz LCDP ==============-->
+        <h2> 
+            <div id="Quiz lcdp"><img src="lcdp.png" width="50">Quel personnage LA CASA DE PAPEL es-tu?</div>
+        </h2>
+        <fieldset>
+            <legend>Le personnage que tu aimes le plus est :</legend>
+            <p>
+                <input type="radio" name="lcdp_q1" id="r1" value="professeur">
+                <label for="r1">Le professeur, intelligent et respecté</label>
+            </p>
+            <p>
+                <input type="radio" name="lcdp_q1" id="r2" value="tokyo">
+                <label for="r2">Tokyo, intrépide et courageuse</label>
+            </p>
+            <p>
+                <input type="radio" name="lcdp_q1" id="r3" value="helsinki">
+                <label for="r3">Helsinki, fort et engagé</label>
+            </p>
+            <p>
+                <input type="radio" name="lcdp_q1" id="r4" value="berlin">
+                <label for="r4">Berlin, sûr de lui et vantard</label>
+            </p>
+        </fieldset>
+        <br/>
+        <button onclick="ResLCDP()">Voir le résultat</button>
+
+
+
+
+
+        <h2>
+            <div id="Quiz st"><img src="icons8-stranger-things-480.png" width="50">Quel personnage de Stranger Things es-tu?</div>
+        </h2>
+
+
+
+        <h2>
+            <div id="Quiz minion"><img src="minions.jpeg" width="100">Quel Minion es-tu?</div>
+        </h2>
+
+
+    </body>
+</html>
