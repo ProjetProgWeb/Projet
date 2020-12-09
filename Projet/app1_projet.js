@@ -58,7 +58,7 @@ function ResST() {
     document.querySelector("input[name='st_5']:checked").value,
     document.querySelector("input[name='st_6']:checked").value,
     document.querySelector("input[name='st_7']:checked").value,
-    document.querySelector("input[name='st_7']:checked").value]
+    document.querySelector("input[name='st_8']:checked").value]
     for (var i=0; i<questions.length; i++) { 
         if (i==1 || i==6) {
             switch(questions[i]) {
@@ -84,7 +84,7 @@ function ResST() {
         }
         else {
             switch(questions[i]) {
-                case 'eleve' : 
+                case 'eleven' : 
                     Res.E++; 
                     break; 
                 case 'hopper' : 
