@@ -1,3 +1,7 @@
+window.addEventListener("load", function(event) {
+    document.getElementById("att1").setAttribute("checked", "true");
+});
+
 function Joueur(firstName, lastName, pseudo) {
     this.firstName = firstName;
     this.lastName = lastName;

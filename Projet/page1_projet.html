@@ -6,11 +6,33 @@
     <title>...</title>
     <link rel="icon" href="Images/popcorn.ico">
     <script src="app1_projet.js"></script>
+    <link rel="stylesheet" type="text/css" href="mep.css">
+    <style>
+        body {
+            background-color: rgb(39, 36, 36);
+        }
+
+        h1 {
+            text-align: center;
+            text-transform: uppercase;
+            color: rgba(255, 0, 0, 0.767);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+        }
+
+        h2 {
+            text-transform: uppercase;
+            color: rgba(255, 0, 0, 0.767);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+        }
+    </style>
 </head>
 
 <body>
-    <h1>...</h1>
+    <h1>le quiz</h1>
     <a name="haut"></a>
+    <div style="background-color: rgba(255, 255, 255, 0.849);">
     <h2>Joueurs</h2>
     Prénom : <input type="text" id="prenom" onfocus="this.value=''">
     Nom : <input type="text" id="nom" onfocus="this.value=''">
@@ -27,6 +49,8 @@
             </tr>
         </thead>
     </table>
+    <br/><br/>
+    </div>
     <br /><br />
     <a href="#Quiz lcdp">Quiz LA CASA DE PAPEL</a>
     <br>
@@ -40,6 +64,10 @@
     </h2>
     <fieldset>
         <legend>Le personnage que tu aimes le plus est : </legend>
+        <p>
+            <input id="att1" type="radio" name="st_1">
+            <label for="r1">En attente de réponse</label>
+        </p>
         <p>
             <input type="radio" name="lcdp_1" value="helsinki">
             <label for="r3">Helsinki, fort et engagé</label>
@@ -180,7 +208,7 @@
     </fieldset>
     <br />
     <button onclick="ResLCDP()">Voir le résultat</button>
-    <br/><br/>
+    <br /><br />
     <div id="pLcdp"></div>
     <a href="#haut">Revenir aux résultats</a>
 
@@ -192,6 +220,10 @@
     </h2>
     <fieldset>
         <legend>De quelle couleur sont tes cheveux? </legend>
+        <p>
+            <input type="radio" name="st_1" value=" " checked>
+            <label for="r1">En attente de réponse</label>
+        </p>
         <p>
             <input type="radio" name="st_1" value="eleven">
             <label for="r1">Bruns/châtains</label>
@@ -327,7 +359,7 @@
     </fieldset>
     <br />
     <button onclick="ResST()">Voir le résultat</button>
-    <br/><br/>
+    <br /><br />
     <div id="pSt"></div>
     <a href="#haut">Revenir aux résultats</a>
 
@@ -442,12 +474,11 @@
     </fieldset>
     <br />
     <button onclick="ResMini()">Voir le résultat</button>
-    <br/><br/>
+    <br /><br />
     <div id="pMini"></div>
     <a href="#haut">Revenir aux résultats</a>
 </body>
 
 </html>
 
-<!--verifier que tout soit checked : demander comment supprimer l'erreur de la console-->
-<!--régler le pb du rafraichissement-->
+<!--implémenter la sélection du bouton attente pour chaque fieldset + faire les tests de sélection dans les fonctions-->
