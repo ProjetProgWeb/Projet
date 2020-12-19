@@ -169,7 +169,9 @@ function ResST() {
             const paragraphe = document.createElement('p');
             const image = document.createElement('img');
             const affich = document.getElementById("pSt");
+            paragraphe.setAttribute("class", "resultats");
             image.setAttribute("width", 400);
+            image.setAttribute("class", "ResImg");
             affich.innerHTML = '';
             if (pers == 'E') {
                 perso = "Eleven";
@@ -270,6 +272,8 @@ function ResLCDP() {
             const image = document.createElement('img');
             const affich = document.getElementById("pLcdp");
             image.setAttribute("width", 400);
+            image.setAttribute("class", "ResImg");
+            paragraphe.setAttribute("class", "resultats");
             affich.innerHTML = '';
 
             if (pers == 'T') {
@@ -365,8 +369,10 @@ function ResMini() {
             const hparagraphe = document.createElement('h3');
             const paragraphe = document.createElement('p');
             const image = document.createElement('img');
+            paragraphe.setAttribute("class", "resultats");
             const affich = document.getElementById("pMini");
             image.setAttribute("width", 400);
+            image.setAttribute("class", "ResImg");
             affich.innerHTML = '';
 
             if (pers == 'B') {

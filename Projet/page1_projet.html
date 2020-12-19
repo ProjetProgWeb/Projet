@@ -7,49 +7,34 @@
     <link rel="icon" href="Images/popcorn.ico">
     <script src="app1_projet.js"></script>
     <link rel="stylesheet" type="text/css" href="mep.css">
-    <style>
-        body {
-            background-color: rgb(39, 36, 36);
-        }
-
-        h1 {
-            text-align: center;
-            text-transform: uppercase;
-            color: rgba(255, 0, 0, 0.767);
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-
-        }
-
-        h2 {
-            text-transform: uppercase;
-            color: rgba(255, 0, 0, 0.767);
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-
-        }
-    </style>
 </head>
 
 <body>
     <h1>le quiz</h1>
+    <br />
     <a name="haut"></a>
-    <div style="background-color: rgba(255, 255, 255, 0.849);">
-    <h2>Joueurs</h2>
-    Prénom : <input type="text" id="prenom" onfocus="this.value=''">
-    Nom : <input type="text" id="nom" onfocus="this.value=''">
-    Pseudo : <input type="text" id="psd" onfocus="this.value=''">
-    <button onclick="Ajouter()">Participer</button>
-    <br /><br />
-    <table border="1" id="tab_j">
-        <thead>
-            <tr>
-                <th>Pseudo</th>
-                <th>Quiz LCDP</th>
-                <th>Quiz Stranger Things</th>
-                <th>Quiz Minions</th>
-            </tr>
-        </thead>
-    </table>
-    <br/><br/>
+    <div class="back">
+        <div class="Tableau">
+            <h2>Joueurs</h2>
+            <div class="noms">
+                Prénom : <input type="text" id="prenom" onfocus="this.value=''" class="inscript">
+                Nom : <input type="text" id="nom" onfocus="this.value=''" class="inscript">
+                Pseudo : <input type="text" id="psd" onfocus="this.value=''" class="inscript">
+                <button onclick="Ajouter()">Participer</button>
+            </div>
+            <br /><br />
+            <table border="1" id="tab_j">
+                <thead>
+                    <tr>
+                        <th>Pseudo</th>
+                        <th>Quiz LCDP</th>
+                        <th>Quiz Stranger Things</th>
+                        <th>Quiz Minions</th>
+                    </tr>
+                </thead>
+            </table>
+            <br /><br />
+        </div>
     </div>
     <br /><br />
     <a href="#Quiz lcdp">Quiz LA CASA DE PAPEL</a>
@@ -59,6 +44,7 @@
     <a href="#Quiz minion">Quiz Minions</a>
 
     <!--============ Quiz LCDP ==============-->
+    <br /><br />
     <h2>
         <div id="Quiz lcdp"><img src="Images/lcdp.png" width="50">Quel personnage LA CASA DE PAPEL es-tu?</div>
     </h2>
@@ -168,7 +154,8 @@
         </p>
     </fieldset>
     <br />
-    <fieldset>Face au problème, tu... </legend>
+    <fieldset>
+        <legend>Face au problème, tu...</legend>
         <p>
             <input type="radio" name="lcdp_6" value="professeur">
             <label for="r1">Arrive toujours à trouver une solution</label>
@@ -209,7 +196,7 @@
     <br />
     <button onclick="ResLCDP()">Voir le résultat</button>
     <br /><br />
-    <div id="pLcdp"></div>
+    <div id="pLcdp" class="dLcdp"></div>
     <a href="#haut">Revenir aux résultats</a>
 
 
@@ -366,7 +353,7 @@
 
 
     <h2>
-        <div id="Quiz minion"><img src="Images/minions.jpeg" width="100">Quel Minion es-tu?</div>
+        <div id="Quiz minion"><img src="Images/mini.png" width="100">Quel Minion es-tu?</div>
     </h2>
     <fieldset>
         <legend>Quelle est ta morphologie? </legend>
@@ -482,3 +469,6 @@
 </html>
 
 <!--implémenter la sélection du bouton attente pour chaque fieldset + faire les tests de sélection dans les fonctions-->
+<!--aligner les photos-->
+<!--quiz bonus-->
+<!--ne pas pouvoir entrer de pseudo vide dans le tableau-->
