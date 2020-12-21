@@ -28,7 +28,10 @@ function Ajouter() {
             break;
         }
     }
-    if (present) {
+    if (joueur.pseudo.length < 1) {
+		alert('Veuiller entrer un pseudo valide');
+	}
+    else if (present) {
         alert('Ce pseudo existe déjà. Veuillez en entrer un autre.');
     }
     else {
