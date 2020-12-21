@@ -15,14 +15,14 @@ let joueurs = [];
 let pseudos = [];
 
 function Ajouter() {
-    var pnm = document.getElementById("prenom").value;
-    var nm = document.getElementById("nom").value;
-    var ps = document.getElementById("psd").value;
+    let pnm = document.getElementById("prenom").value;
+    let nm = document.getElementById("nom").value;
+    let ps = document.getElementById("psd").value;
 
     let joueur = new Joueur(pnm, nm, ps);
 
-    var present = false;
-    for (var i = 0; i < joueurs.length; i++) {
+    let present = false;
+    for (let i = 0; i < joueurs.length; i++) {
         if (joueur.pseudo == joueurs[i].pseudo) {
             present = true;
             break;
@@ -74,9 +74,9 @@ function Ajouter() {
 
 
 function removePerson(mouseEvent) {
-    var ps = mouseEvent.target.parentElement.parentElement.firstChild.innerText;
-    var index;
-    for (var i = 0; i < joueurs.length; i++) {
+    let ps = mouseEvent.target.parentElement.parentElement.firstChild.innerText;
+    let index;
+    for (let i = 0; i < joueurs.length; i++) {
         if (joueurs[i].pseudo == ps) {
             index = i;
             break;
@@ -104,7 +104,7 @@ function ResST() {
         }
 
         if (present) {
-            var Res = { E: 0, H: 0, S: 0, D: 0 };
+            let Res = { E: 0, H: 0, S: 0, D: 0 };
             try {
                 var questions = [document.querySelector("input[name='st_1']:checked").value,
                 document.querySelector("input[name='st_2']:checked").value,
@@ -118,7 +118,7 @@ function ResST() {
             catch (err) {
                 alert("Toutes les réponses n'ont pas été cochées.");
             }
-            for (var i = 0; i < questions.length; i++) {
+            for (let i = 0; i < questions.length; i++) {
                 if (i == 1 || i == 6) {
                     switch (questions[i]) {
                         case 'eleven':
@@ -158,8 +158,8 @@ function ResST() {
                 }
             }
 
-            var max = 0
-            var pers;
+            let max = 0
+            let pers;
             for (let i in Res) {
                 if (Res[i] > max) {
                     max = Res[i];
@@ -232,9 +232,9 @@ function ResLCDP() {
         }
 
         if (present) {
-            var Res = { T: 0, P: 0, H: 0, B: 0 };
+            let Res = { T: 0, P: 0, H: 0, B: 0 };
             try {
-                var questions = [document.querySelector("input[name='lcdp_1']:checked").value,
+                let questions = [document.querySelector("input[name='lcdp_1']:checked").value,
                 document.querySelector("input[name='lcdp_2']:checked").value,
                 document.querySelector("input[name='lcdp_3']:checked").value,
                 document.querySelector("input[name='lcdp_4']:checked").value,
@@ -245,7 +245,7 @@ function ResLCDP() {
             catch (err) {
                 alert("Toutes les réponses n'ont pas été cochées.");
             }
-            for (var i = 0; i < questions.length; i++) {
+            for (let i = 0; i < questions.length; i++) {
                 switch (questions[i]) {
                     case 'professeur':
                         Res.P++;
