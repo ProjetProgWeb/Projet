@@ -1,5 +1,5 @@
 window.addEventListener("load", function(event) {
-    document.getElementByType("radio").setAttribute("checked", "true");
+    document.getElementByType("radio").setAttribute("checked", "false");
 });
 
 function Joueur(firstName, lastName, pseudo) {
