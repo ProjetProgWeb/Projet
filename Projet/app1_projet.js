@@ -234,7 +234,7 @@ function ResLCDP() {
         if (present) {
             let Res = { T: 0, P: 0, H: 0, B: 0 };
             try {
-                let questions = [document.querySelector("input[name='lcdp_1']:checked").value,
+                var questions = [document.querySelector("input[name='lcdp_1']:checked").value,
                 document.querySelector("input[name='lcdp_2']:checked").value,
                 document.querySelector("input[name='lcdp_3']:checked").value,
                 document.querySelector("input[name='lcdp_4']:checked").value,
