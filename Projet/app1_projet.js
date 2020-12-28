@@ -412,3 +412,12 @@ function ResMini() {
     }
 
 }
+function Surprise() {
+    let Surprise = document.getElementById("SurpriseInput").value; 
+    if (Surprise == "CMALCODE") {
+         let alertMessage = `Et non, y'a rien, même pas de code Netflix... Mais simplement le maître mot de cette UF`;
+    alert(alertMessage); }
+     else {
+         alert("Perdu... Cherche Mieux! (Toutes les lettres sont en majuscules)")
+      }
+}
