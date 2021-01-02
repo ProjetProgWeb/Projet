@@ -1,10 +1,7 @@
-
-/* Réinitialisation des cases cochées à chaque raffraichissment de la page */
 window.addEventListener("load", function(event) {
     document.getElementByType("radio").setAttribute("checked", "false");
 });
 
-/* Infos du joueur */
 function Joueur(firstName, lastName, pseudo) {
     this.firstName = firstName;
     this.lastName = lastName;
@@ -12,12 +9,12 @@ function Joueur(firstName, lastName, pseudo) {
     this.lcdp = "";
     this.st = "";
     this.minion = "";
+    this.myst = "";
 }
 
 let joueurs = [];
 let pseudos = [];
 
-/* Ajouter un joueur */
 function Ajouter() {
     let pnm = document.getElementById("prenom").value;
     let nm = document.getElementById("nom").value;
@@ -47,18 +44,22 @@ function Ajouter() {
         const lcdpCell = document.createElement("TD");
         const stCell = document.createElement("TD");
         const minionCell = document.createElement("TD");
+        const mystCell = document.createElement("TD"); 
         nameCell.innerText = joueur.pseudo;
         lcdpCell.innerText = joueur.lcdp;
         stCell.innerText = joueur.st;
         minionCell.innerText = joueur.minion;
+        mystCell.innerText = joueur.myst;
 
         const rLcdp = (joueur.pseudo).concat('_', 'lcdp');
         const rSt = (joueur.pseudo).concat('_', 'st');
         const rMin = (joueur.pseudo).concat('_', 'mini');
+        const rMyst = (joueur.pseudo).concat('_', 'myst');
 
         lcdpCell.setAttribute("id", rLcdp);
         stCell.setAttribute("id", rSt);
         minionCell.setAttribute("id", rMin);
+        mystCell.setAttribute("id", rMyst);
 
         const removeCell = document.createElement("TD");
         const removeButton = document.createElement("BUTTON");
@@ -71,12 +72,13 @@ function Ajouter() {
         persRaw.appendChild(lcdpCell);
         persRaw.appendChild(stCell);
         persRaw.appendChild(minionCell);
+        persRaw.appendChild(mystCell);
         persRaw.appendChild(removeCell);
         tblPers.appendChild(persRaw);
     }
 }
 
-/* Supprimer un joueur */
+
 function removePerson(mouseEvent) {
     let ps = mouseEvent.target.parentElement.parentElement.firstChild.innerText;
     let index;
@@ -91,7 +93,7 @@ function removePerson(mouseEvent) {
     mouseEvent.target.parentElement.parentElement.remove();
 }
 
-/* Résultat du Quiz Stranger Things */
+
 function ResST() {
     if (joueurs.length == 0) {
         alert('Veuillez vous enregistrer dans la liste de joueurs.');
@@ -220,7 +222,6 @@ function ResST() {
     }
 }
 
-/* Résultats Quiz La Casa De Papel */
 function ResLCDP() {
     if (joueurs.length == 0) {
         alert('Veuillez vous enregistrer dans la liste de joueurs.');
@@ -323,7 +324,6 @@ function ResLCDP() {
     }
 }
 
-/* Résultats Quiz des Minions */
 function ResMini() {
     if (joueurs.length == 0) {
         alert("Veuillez vous enregistrer dans la liste de joueurs.");
@@ -419,13 +419,104 @@ function ResMini() {
 
 }
 
-/* Fonction Surprise avec le mot de passe  */
-function Surprise() {
-    let Surprise = document.getElementById("SurpriseInput").value; 
-    if (Surprise == "CMALCODE") {
-         let alertMessage = `Et non, y'a rien, même pas de code Netflix... Mais simplement le maître mot de cette UF`;
-    alert(alertMessage); }
-     else {
-         alert("Perdu... Cherche Mieux! (Toutes les lettres sont en majuscules)")
-      }
+function ResMyst() {
+    if (joueurs.length == 0) {
+        alert("Veuillez vous enregistrer dans la liste de joueurs.");
+    }
+    else {
+        let ps = prompt('Veuillez entrer votre pseudo :');
+
+        let present = false;
+        for (let i = 0; i < joueurs.length; i++) {
+            if (ps == joueurs[i].pseudo) {
+                present = true;
+                break;
+            }
+        }
+
+        if (present) {
+
+            let Res = { Ca: 0, Cl: 0, N: 0 , Ch : 0};
+            try {
+                var questions = [document.querySelector("input[name='myst_1']:checked").value,
+                document.querySelector("input[name='myst_2']:checked").value,
+                document.querySelector("input[name='myst_3']:checked").value,
+                document.querySelector("input[name='myst_4']:checked").value]
+            }
+            catch (err) {
+                alert("Toutes les réponses n'ont pas été cochées.");
+            }
+            for (let i = 0; i < questions.length; i++) {
+                switch (questions[i]) {
+                    case 'carina':
+                        Res.Ca++;
+                        break;
+                    case 'clem':
+                        Res.Cl++;
+                        break;
+                    case 'nerea':
+                        Res.N++;
+                        break;
+                    default:
+                        Res.Ch++;
+                }
+            }
+
+            let max = 0
+            let pers;
+            for (let i in Res) {
+                if (Res[i] > max) {
+                    max = Res[i];
+                    pers = i;
+                }
+            }
+
+            const hparagraphe = document.createElement('h3');
+            const paragraphe = document.createElement('p');
+            const image = document.createElement('img');
+            paragraphe.setAttribute("class", "resultats");
+            const affich = document.getElementById("pMyst");
+            image.setAttribute("width", 400);
+            image.setAttribute("class", "ResImg");
+            affich.innerHTML = '';
+
+            if (pers == 'Ca') {
+                perso = "Carina";
+                hparagraphe.innerText = "Carina";
+                paragraphe.innerText = "Bravo! comme elle tu as gagné, ta récompense est de savoir que tu ressemble à Carina.";
+                image.setAttribute("src", "Images/carina.png");
+            }
+            else if (pers == 'Cl') {
+                perso = "Clémence";
+                hparagraphe.innerText = "Clémence";
+                paragraphe.innerText = "On a qu'une seule vie après tout. Félicitation! Tu es une deuxième Clémence.";
+                image.setAttribute("src", "Images/clem.jpg");
+            }
+            else if (pers == 'N') {
+                perso = "Nerea";
+                hparagraphe.innerText = "Nerea";
+                paragraphe.innerText = "Excellent, tu es une deuxième Nerea. Tu peux être aussi heureux qu'elle quand elle a trouvé ses initiales.";
+                image.setAttribute("src", "Images/nerea.jpg");
+            }
+            else {
+                perso = "Ch";
+                hparagraphe.innerText = "Chama";
+                paragraphe.innerText = "Excellent, tu ressemble beaucoup à Chama";
+                image.setAttribute("src", "Images/kevin.png");
+            }
+
+            affich.appendChild(hparagraphe);
+            affich.appendChild(image);
+            affich.appendChild(paragraphe);
+
+            const ID = (ps).concat('_', 'myst');
+            const caseRes = document.getElementById(ID);
+
+            caseRes.innerText = perso;
+        }
+        else {
+            alert('Ce pseudo n\'est pas valide');
+        }
+    }
+
 }
