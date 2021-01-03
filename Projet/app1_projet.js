@@ -15,6 +15,14 @@ function Joueur(firstName, lastName, pseudo) {
 let joueurs = [];
 let pseudos = [];
 
+function validateForm() {
+  let x = document.forms["myForm"]["psd"].value;
+  if (x == "") {
+    alert("Veuiller entrer un pseudo valide");
+    return false;
+  }
+}
+
 function Ajouter() {
     let pnm = document.getElementById("prenom").value;
     let nm = document.getElementById("nom").value;
@@ -29,10 +37,7 @@ function Ajouter() {
             break;
         }
     }
-    if (joueur.pseudo.length < 1) {
-		alert('Veuiller entrer un pseudo valide');
-	}
-    else if (present) {
+    if (present) {
         alert('Ce pseudo existe déjà. Veuillez en entrer un autre.');
     }
     else {
