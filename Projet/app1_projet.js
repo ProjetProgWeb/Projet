@@ -447,18 +447,31 @@ function ResMyst() {
                 alert("Toutes les réponses n'ont pas été cochées.");
             }
             for (let i = 0; i < questions.length; i++) {
-                switch (questions[i]) {
-                    case 'carina':
-                        Res.Ca++;
-                        break;
-                    case 'clem':
-                        Res.Cl++;
-                        break;
-                    case 'nerea':
-                        Res.N++;
-                        break;
-                    default:
-                        Res.Ch++;
+		    if (i==2) {
+			switch (questions[i]) {
+                    		case 'carina':
+                        		Res.Ca++;
+                        		break;
+                    		case 'clem':
+                        		Res.Cl++;
+                        		Res.N++;
+                        		break;
+                    		default:
+                        		Res.Ch++;
+			}
+			else {
+                		switch (questions[i]) {
+                    			case 'carina':
+                        		Res.Ca++;
+                        		break;
+                    		case 'clem':
+                        		Res.Cl++;
+                        		break;
+                    		case 'nerea':
+                        		Res.N++;
+                        		break;
+                    		default:
+                        		Res.Ch++;
                 }
             }
 
