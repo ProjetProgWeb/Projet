@@ -19,8 +19,10 @@
             <div class="noms">
                 Prénom : <input type="text" id="prenom" onfocus="this.value=''" class="inscript">
                 Nom : <input type="text" id="nom" onfocus="this.value=''" class="inscript">
+                <form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post"> 
                 Pseudo : <input type="text" id="psd" onfocus="this.value=''" class="inscript">
-                <button onclick="Ajouter()">Participer</button>
+                    <button onclick="Ajouter()">Participer</button>
+                </form> 
             </div>
             <br /><br />
             <table border="1" id="tab_j">
