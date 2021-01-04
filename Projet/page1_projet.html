@@ -1,13 +1,14 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="utf-8">
-    <title>Quiz</title>
+    <title>...</title>
     <link rel="icon" href="Images/popcorn.ico">
     <script src="app1_projet.js"></script>
     <link rel="stylesheet" type="text/css" href="mep2.css">
 </head>
+
 
 <body>
     <h1>le quiz</h1>
@@ -19,10 +20,8 @@
             <div class="noms">
                 Prénom : <input type="text" id="prenom" onfocus="this.value=''" class="inscript">
                 Nom : <input type="text" id="nom" onfocus="this.value=''" class="inscript">
-                <form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post"> 
                 Pseudo : <input type="text" id="psd" onfocus="this.value=''" class="inscript">
-                    <button onclick="Ajouter()">Participer</button>
-                </form> 
+                <button onclick="Ajouter()">Participer</button>
             </div>
             <br /><br />
             <table border="1" id="tab_j">
@@ -32,7 +31,6 @@
                         <th>Quiz LCDP</th>
                         <th>Quiz Stranger Things</th>
                         <th>Quiz Minions</th>
-                        <th>Quiz Mystère</th>
                     </tr>
                 </thead>
             </table>
@@ -41,19 +39,18 @@
     </div>
     <br /><br />
 
-     <!--Lien vers les différents Quiz-->
+    <!--Lien vers les différents Quiz-->
     <a href="#Quiz lcdp">Quiz LA CASA DE PAPEL</a>
     <br>
     <a href="#Quiz st">Quiz Stranger Things</a>
     <br>
     <a href="#Quiz minion">Quiz Minions</a>
-    <br>
-    <a href="#Quiz_mystere">Quiz Mystère</a>
+
 
     <!--============ Quiz La Casa De Papel ==============-->
     <br /><br />
     <h2>
-        <div id="Quiz lcdp" class="quiz"><img src="Images/lcdp.png" width="50">Quel personnage LA CASA DE PAPEL es-tu?</div>
+        <div id="Quiz lcdp"><img src="Images/lcdp.png" width="50">Quel personnage LA CASA DE PAPEL es-tu?</div>
     </h2>
     <fieldset>
         <legend>Le personnage que tu aimes le plus est : </legend>
@@ -71,7 +68,7 @@
         </p>
         <p>
             <input type="radio" name="lcdp_1" value="berlin">
-            <label for="r4">Berlin, sûr de lui et vantard</label>
+            <label for="r4">Berlin, sûr dE lui et vantard</label>
         </p>
     </fieldset>
     <br />
@@ -103,7 +100,7 @@
         </p>
         <p>
             <input type="radio" name="lcdp_3" value="tokyo">
-            <label for="r2">Tu dépenserais tout le premier jour en champagne et des voitures</label>
+            <label for="r2">Tu dépenserAis tout le premier jour en champagne et des voitures</label>
         </p>
         <p>
             <input type="radio" name="lcdp_3" value="helsinki">
@@ -112,7 +109,7 @@
         </p>
         <p>
             <input type="radio" name="lcdp_3" value="berlin">
-            <label for="r4">Tu te vanterais d'avoir un aussi gros pactole</label>
+            <label for="r4">Tu te vanterais d'avoir un aussi gros pactoLe</label>
         </p>
     </fieldset>
     <br />
@@ -138,14 +135,14 @@
     </fieldset>
     <br />
     <fieldset>
-        <legend>Le personnage que tu aimes le moins : </legend>
+        <legend>Le persOnnage que tu aimes le moins : </legend>
         <p>
             <input type="radio" name="lcdp_5" value="professeur">
             <label for="r1">Tokyo, je ne la comprends jamais</label>
         </p>
         <p>
             <input type="radio" name="lcdp_5" value="tokyo">
-            <label for="r2">Berlin, pour qui il se prend?</label>
+            <label for="r2">Berlin, pour qui il se prenD?</label>
         </p>
         <p>
             <input type="radio" name="lcdp_5" value="helsinki">
@@ -158,7 +155,7 @@
     </fieldset>
     <br />
     <fieldset>
-        <legend>Face au problème, tu...</legend>
+        <legend>FaCe au problème, tu...</legend>
         <p>
             <input type="radio" name="lcdp_6" value="professeur">
             <label for="r1">Arrives toujours à trouver une solution</label>
@@ -189,7 +186,7 @@
         </p>
         <p>
             <input type="radio" name="lcdp_7" value="berlin">
-            <label for="r4">Il n'y aura pas de problème c'est sûr</label>
+            <label for="r4">Il n'y aura pas de problèMe c'est sûr</label>
         </p>
         <p>
             <input type="radio" name="lcdp_7" value="helsinki">
@@ -203,7 +200,7 @@
     <a href="#haut">Revenir aux résultats</a>
 
 
-
+<!--============ Quiz Stranger Things ==============-->
     <h2>
         <div id="Quiz st"><img src="Images/icons8-stranger-things-480.png" width="50">Quel personnage de Stranger Things
             es-tu?</div>
@@ -284,7 +281,7 @@
         <legend>Quel est ton plus grand défaut? </legend>
         <p>
             <input type="radio" name="st_5" value="steve">
-            <label for="r1">Je coupe souvent la parole</label>
+            <label for="r1">Je Coupe souvent la parole</label>
         </p>
         <p>
             <input type="radio" name="st_5" value="hopper">
@@ -350,7 +347,7 @@
     <a href="#haut">Revenir aux résultats</a>
 
 
-
+<!--============ Quiz Minion ==============-->
     <h2>
         <div id="Quiz minion"><img src="Images/mini.png" width="100">Quel Minion es-tu?</div>
     </h2>
@@ -463,6 +460,8 @@
     <br /><br />
     <div id="pMini"></div>
     <br /><br />
+
+    <!--============ Surpriiiiise ==============-->
     <h2>BONUS</h2>
     <p style="color: antiquewhite";>Si tu as eu l'oeil aussi bien aiguisé que Lucifer dans la saison 3, tu as du remarquer des petites annomalies dans dans la typographie de ce site...  </p>
     <p style="color: antiquewhite";>A toi de jouer et d'essayer de perser le mystère de cette page...</p> 
@@ -472,10 +471,10 @@
     <br /><br />
     <br /><br />
     <a href="#haut">Revenir aux résultats</a>
-    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 </body>
 
 </html>
 
 <!--implémenter la sélection du bouton attente pour chaque fieldset + faire les tests de sélection dans les fonctions-->
 <!--quiz bonus-->
+<!--ne pas pouvoir entrer de pseudo vide dans le tableau-->

@@ -1,7 +1,9 @@
+/* Réinitialisation des cases cochées à chaque raffraichissment de la page */
 window.addEventListener("load", function(event) {
     document.getElementByType("radio").setAttribute("checked", "false");
 });
 
+/* Infos du joueur */
 function Joueur(firstName, lastName, pseudo) {
     this.firstName = firstName;
     this.lastName = lastName;
@@ -9,12 +11,12 @@ function Joueur(firstName, lastName, pseudo) {
     this.lcdp = "";
     this.st = "";
     this.minion = "";
-    this.myst = "";
 }
 
 let joueurs = [];
 let pseudos = [];
 
+/* Ajouter un joueur */
 function Ajouter() {
     let pnm = document.getElementById("prenom").value;
     let nm = document.getElementById("nom").value;
@@ -29,7 +31,10 @@ function Ajouter() {
             break;
         }
     }
-    if (present) {
+    if (joueur.pseudo.length < 1) {
+		alert('Veuiller entrer un pseudo valide');
+	}
+    else if (present) {
         alert('Ce pseudo existe déjà. Veuillez en entrer un autre.');
     }
     else {
@@ -41,22 +46,18 @@ function Ajouter() {
         const lcdpCell = document.createElement("TD");
         const stCell = document.createElement("TD");
         const minionCell = document.createElement("TD");
-        const mystCell = document.createElement("TD"); 
         nameCell.innerText = joueur.pseudo;
         lcdpCell.innerText = joueur.lcdp;
         stCell.innerText = joueur.st;
         minionCell.innerText = joueur.minion;
-        mystCell.innerText = joueur.myst;
 
         const rLcdp = (joueur.pseudo).concat('_', 'lcdp');
         const rSt = (joueur.pseudo).concat('_', 'st');
         const rMin = (joueur.pseudo).concat('_', 'mini');
-        const rMyst = (joueur.pseudo).concat('_', 'myst');
 
         lcdpCell.setAttribute("id", rLcdp);
         stCell.setAttribute("id", rSt);
         minionCell.setAttribute("id", rMin);
-        mystCell.setAttribute("id", rMyst);
 
         const removeCell = document.createElement("TD");
         const removeButton = document.createElement("BUTTON");
@@ -69,13 +70,12 @@ function Ajouter() {
         persRaw.appendChild(lcdpCell);
         persRaw.appendChild(stCell);
         persRaw.appendChild(minionCell);
-        persRaw.appendChild(mystCell);
         persRaw.appendChild(removeCell);
         tblPers.appendChild(persRaw);
     }
 }
 
-
+/* Supprimer un joueur */
 function removePerson(mouseEvent) {
     let ps = mouseEvent.target.parentElement.parentElement.firstChild.innerText;
     let index;
@@ -90,7 +90,7 @@ function removePerson(mouseEvent) {
     mouseEvent.target.parentElement.parentElement.remove();
 }
 
-
+/* Résultat du Quiz Stranger Things */
 function ResST() {
     if (joueurs.length == 0) {
         alert('Veuillez vous enregistrer dans la liste de joueurs.');
@@ -219,6 +219,7 @@ function ResST() {
     }
 }
 
+/* Résultats Quiz La Casa De Papel */
 function ResLCDP() {
     if (joueurs.length == 0) {
         alert('Veuillez vous enregistrer dans la liste de joueurs.');
@@ -321,6 +322,7 @@ function ResLCDP() {
     }
 }
 
+/* Résultats Quiz des Minions */
 function ResMini() {
     if (joueurs.length == 0) {
         alert("Veuillez vous enregistrer dans la liste de joueurs.");
@@ -415,6 +417,8 @@ function ResMini() {
     }
 
 }
+
+/* Fonction Surprise avec le mot de passe  */
 function Surprise() {
     let Surprise = document.getElementById("SurpriseInput").value; 
     if (Surprise == "CMALCODE") {
