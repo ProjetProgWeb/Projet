@@ -1,10 +1,7 @@
-
-/* Réinitialisation des cases cochées à chaque raffraichissment de la page */
 window.addEventListener("load", function(event) {
     document.getElementByType("radio").setAttribute("checked", "false");
 });
 
-/* Infos du joueur */
 function Joueur(firstName, lastName, pseudo) {
     this.firstName = firstName;
     this.lastName = lastName;
@@ -87,7 +84,7 @@ function Ajouter() {
     }
 }
 
-/* Supprimer un joueur */
+
 function removePerson(mouseEvent) {
     let ps = mouseEvent.target.parentElement.parentElement.firstChild.innerText;
     let index;
@@ -102,7 +99,7 @@ function removePerson(mouseEvent) {
     mouseEvent.target.parentElement.parentElement.remove();
 }
 
-/* Résultat du Quiz Stranger Things */
+
 function ResST() {
     if (joueurs.length == 0) {
         alert('Veuillez vous enregistrer dans la liste de joueurs.');
@@ -231,7 +228,6 @@ function ResST() {
     }
 }
 
-/* Résultats Quiz La Casa De Papel */
 function ResLCDP() {
     if (joueurs.length == 0) {
         alert('Veuillez vous enregistrer dans la liste de joueurs.');
@@ -334,7 +330,6 @@ function ResLCDP() {
     }
 }
 
-/* Résultats Quiz des Minions */
 function ResMini() {
     if (joueurs.length == 0) {
         alert("Veuillez vous enregistrer dans la liste de joueurs.");
