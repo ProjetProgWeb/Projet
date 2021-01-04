@@ -514,7 +514,7 @@ function ResMyst() {
                 image.setAttribute("src", "Images/nerea.jpg");
             }
             else {
-                perso = "Ch";
+                perso = "Chama";
                 hparagraphe.innerText = "Chama";
                 paragraphe.innerText = "Excellent, tu ressemble beaucoup à Chama";
                 image.setAttribute("src", "Images/kevin.png");
