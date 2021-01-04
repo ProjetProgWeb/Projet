@@ -447,7 +447,7 @@ function ResMyst() {
 
         if (present) {
 
-            let Res = { Ca: 0, Cl: 0, N: 0 , Ch : 0};
+            let Res = { Ca: 0, Cl: 0, N: 0, Ch: 0 };
             try {
                 var questions = [document.querySelector("input[name='myst_1']:checked").value,
                 document.querySelector("input[name='myst_2']:checked").value,
@@ -458,31 +458,33 @@ function ResMyst() {
                 alert("Toutes les réponses n'ont pas été cochées.");
             }
             for (let i = 0; i < questions.length; i++) {
-		    if (i==2) {
-			switch (questions[i]) {
-                    		case 'carina':
-                        		Res.Ca++;
-                        		break;
-                    		case 'clem':
-                        		Res.Cl++;
-                        		Res.N++;
-                        		break;
-                    		default:
-                        		Res.Ch++;
-			}
-			else {
-                		switch (questions[i]) {
-                    			case 'carina':
-                        		Res.Ca++;
-                        		break;
-                    		case 'clem':
-                        		Res.Cl++;
-                        		break;
-                    		case 'nerea':
-                        		Res.N++;
-                        		break;
-                    		default:
-                        		Res.Ch++;
+                if (i == 3) { 
+                    switch (questions[i]) {
+                        case 'carina':
+                            Res.Ca++;
+                            break;
+                        case 'clem':
+                            Res.Cl++;
+                            Res.N++;
+                            break;
+                        default:
+                            Res.Ch++;
+                    }
+                }
+                else {
+                    switch (questions[i]) {
+                        case 'carina':
+                            Res.Ca++;
+                            break;
+                        case 'clem':
+                            Res.Cl++;
+                            break;
+                        case 'nerea':
+                            Res.N++;
+                            break;
+                        default:
+                            Res.Ch++;
+                    }
                 }
             }
 
