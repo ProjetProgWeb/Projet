@@ -430,6 +430,7 @@ function ResMini() {
 
 }
 
+/* Résultats Quiz sur nous */
 function ResMyst() {
     if (joueurs.length == 0) {
         alert("Veuillez vous enregistrer dans la liste de joueurs.");
