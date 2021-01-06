@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>...</title>
+    <title>Quiz</title>
     <link rel="icon" href="Images/popcorn.ico">
     <script src="app1_projet.js"></script>
     <link rel="stylesheet" type="text/css" href="mep2.css">
@@ -17,10 +17,10 @@
     <div class="back">
         <div class="Tableau">
             <h2>Joueurs</h2>
-            <div class="noms">
-                Prénom : <input type="text" id="prenom" onfocus="this.value=''" class="inscript">
-                Nom : <input type="text" id="nom" onfocus="this.value=''" class="inscript">
-                Pseudo : <input type="text" id="psd" onfocus="this.value=''" class="inscript">
+             <div class="noms">
+                Prénom : <input type="text" id="prenom" onfocus="this.value=''" class="inscript" required>
+                Nom : <input type="text" id="nom" onfocus="this.value=''" class="inscript" required>
+                Pseudo : <input type="text" id="psd" onfocus="this.value=''" class="inscript" required>
                 <button onclick="Ajouter()">Participer</button>
             </div>
             <br /><br />
@@ -460,6 +460,90 @@
     <br /><br />
     <div id="pMini"></div>
     <br /><br />
+    
+    <h2>
+            <div id="Quiz_mystere"><img src="Images/unknown.png" width="100">Quiz mysterieux...</div>
+        </h2>
+        <fieldset>
+            <legend>Devant tes problèmes tu es: </legend>
+            <p>
+                <input type="radio" name="myst_1" value="carina">
+                <label for="r1">Au bout du rolls</label>
+            </p>
+            <p>
+                <input type="radio" name="myst_1" value="clem">
+                <label for="r2">En Y</label>
+            </p>
+            <p>
+                <input type="radio" name="myst_1" value="nerea">
+                <label for="r3">En Erasmus pour fuir</label>
+            </p>
+            <p>
+                <input type="radio" name="myst_1" value="chama">
+                <label for="r3">Sans pression</label>
+            </p>
+        </fieldset>
+        <br />
+        <fieldset>
+            <legend>Ton expression préférée : </legend>
+            <p>
+                <input type="radio" name="myst_2" value="carina">
+                <label for="r1">"Quelle vie"</label>
+            </p>
+            <p>
+                <input type="radio" name="myst_2" value="clem">
+                <label for="r2">"Trop miiiim's"</label>
+            </p>
+            <p>
+                <input type="radio" name="myst_2" value="nerea">
+                <label for="r3">"Ma caméra marche pas"</label>
+            </p>
+            <p>
+                <input type="radio" name="myst_2" value="chama">
+                <label for="r3">"https://insa-toulouse.fr.zoom.us/j/520323519"</label>
+            </p>
+        </fieldset>
+        <br />
+        <fieldset>
+            <legend>Ton plat préféré : </legend>
+            <p>
+                <input type="radio" name="myst_3" value="carina">
+                <label for="r1">Une extravagante pizza à l'ananas</label>
+            </p>
+            <p>
+                <input type="radio" name="myst_3" value="clem">
+                <label for="r2">Un bon Pittaya tropical</label>
+            </p>
+            <p>
+                <input type="radio" name="myst_3" value="nerea">
+                <label for="r3">La classique raclette pour bien manger</label>
+            </p>
+            <p>
+                <input type="radio" name="myst_3" value="chama">
+                <label for="r3">Des bonnes frites croquantes</label>
+            </p>
+        </fieldset>
+        <br />
+        <fieldset>
+            <legend>Tu es plutôt team : </legend>
+            <p>
+                <input type="radio" name="myst_4" value="carina">
+                <label for="r1">Petit village comme Moissac</label>
+            </p>
+            <p>
+                <input type="radio" name="myst_4" value="clem">
+                <label for="r2">Certainement la plus belle ville du monde : Toulouse</label>
+            </p>
+            <p>
+                <input type="radio" name="myst_4" value="chama">
+                <label for="r3">Dans la ville où il y a plus de voitures que d'êtres humains : Casablanca</label>
+            </p>
+        </fieldset>
+        <br />
+        <button onclick="ResMyst()">Voir le résultat</button>
+        <br /><br />
+        <div id="pMyst"></div>
+        <a href="#haut">Revenir aux résultats</a>
 
     <!--============ Surpriiiiise ==============-->
     <h2>BONUS</h2>
