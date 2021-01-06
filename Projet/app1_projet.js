@@ -440,7 +440,9 @@ function ResMyst() {
                             var questions = [document.querySelector("input[name='myst_1']:checked").value,
                             document.querySelector("input[name='myst_2']:checked").value,
                             document.querySelector("input[name='myst_3']:checked").value,
-                            document.querySelector("input[name='myst_4']:checked").value]
+                            document.querySelector("input[name='myst_4']:checked").value,
+			    document.querySelector("input[name='myst_5']:checked").value,
+			    document.querySelector("input[name='myst_6']:checked").value]
                         }
                         catch (err) {
                             alert("Toutes les réponses n'ont pas été cochées.");
@@ -454,6 +456,19 @@ function ResMyst() {
                                     case 'clem':
                                         Res.Cl++;
                                         Res.N++;
+                                        break;
+                                    default:
+                                        Res.Ch++;
+                                }
+                            }
+			    else if (i == 5) {
+                                switch (questions[i]) {
+                                    case 'carina':
+                                        Res.Ca++;	
+                                        Res.N++;
+                                        break;
+                                    case 'clem':
+                                        Res.Cl++;
                                         break;
                                     default:
                                         Res.Ch++;
