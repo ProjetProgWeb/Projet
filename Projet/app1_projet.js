@@ -518,7 +518,7 @@ function ResMyst() {
                         else if (pers == 'Cl') {
                             perso = "Clémence";
                             hparagraphe.innerText = "Clémence";
-                            paragraphe.innerText = "On a qu'une seule vie après tout. Félicitation! Tu es une deuxième Clémence.";
+                            paragraphe.innerText = "Syndrome de la procrastination et trouble obsessionnel du 'On a qu'une vie après tout'. Félicitation! Tu es une deuxième Clémence.";
                             image.setAttribute("src", "Images/clem.jpg");
                         }
                         else if (pers == 'N') {
